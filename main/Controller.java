@@ -31,6 +31,10 @@ public class Controller {
 	
 	
 	
+	public void stop(){
+		
+		
+	}
 	
 	
 	
