@@ -3,6 +3,7 @@ package main;
 public class Controller {
 
 	
+	private Shutdown_Hook shutdown_Hook = new Shutdown_Hook(this);
 	
 	
 	public static void main(String[] args) {
@@ -13,13 +14,12 @@ public class Controller {
 
 	public Controller() {
 		
+		Runtime.getRuntime().addShutdownHook(shutdown_Hook);
 		
 		
 		
 		
 	}
-	
-	
 	
 	
 	
@@ -32,9 +32,12 @@ public class Controller {
 	
 	
 	public void stop(){
+		Runtime.getRuntime().removeShutdownHook(shutdown_Hook);
 		
 		
 	}
+	
+	
 	
 	
 	
@@ -48,3 +51,21 @@ public class Controller {
 
 
 
+final class Shutdown_Hook extends Thread{
+	
+	Controller controller;
+	
+	public Shutdown_Hook(Controller pController) {
+		
+		controller = pController;
+		
+	}
+	
+	
+	public void run() {
+		
+		controller.stop();
+		
+	}
+	
+}
