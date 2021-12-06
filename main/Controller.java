@@ -2,6 +2,9 @@ package main;
 
 public class Controller {
 
+	final static boolean debugMode = true;
+	
+	
 	private DUio duio;
 	private Network_Thread network_Thread;
 	
