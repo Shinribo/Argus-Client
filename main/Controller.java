@@ -30,23 +30,10 @@ public class Controller {
 	}
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	public void stop(){
 		
 		try {
 		
-	
-	
-	
-	
 			Runtime.getRuntime().removeShutdownHook(shutdown_Hook);
 			duio.close();
 			network_Thread.close();
@@ -60,13 +47,6 @@ public class Controller {
 	}	
 	
 }
-
-
-
-
-
-
-
 
 
 final class Shutdown_Hook extends Thread{
