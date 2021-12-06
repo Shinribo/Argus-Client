@@ -23,8 +23,14 @@ public class Controller {
 		
 		Runtime.getRuntime().addShutdownHook(shutdown_Hook);
 		
+		duio = new DUio(this);
+		network_Thread = new Network_Thread(this);
 		
+		duio.setNetwork_Thread(network_Thread);
+		network_Thread.setDUio(duio);
 		
+		duio.start();
+		network_Thread.start();
 		
 	}
 	
