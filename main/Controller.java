@@ -9,7 +9,6 @@ public class Controller {
 	private DUio duio;
 	private Network_Thread network_Thread;
 
-	
 	private Shutdown_Hook shutdown_Hook = new Shutdown_Hook(this);
 	
 	
