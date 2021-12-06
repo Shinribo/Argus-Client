@@ -40,14 +40,24 @@ public class Controller {
 	
 	
 	public void stop(){
-		Runtime.getRuntime().removeShutdownHook(shutdown_Hook);
 		
+		try {
 		
-	}
 	
 	
 	
 	
+			Runtime.getRuntime().removeShutdownHook(shutdown_Hook);
+			duio.close();
+			network_Thread.close();
+			
+		} catch(Exception e) {
+			
+			//
+			
+		}
+		
+	}	
 	
 }
 
