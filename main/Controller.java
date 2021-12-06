@@ -2,6 +2,8 @@ package main;
 
 public class Controller {
 
+	private DUio duio;
+	private Network_Thread network_Thread;
 	
 	private Shutdown_Hook shutdown_Hook = new Shutdown_Hook(this);
 	
@@ -16,8 +18,14 @@ public class Controller {
 		
 		Runtime.getRuntime().addShutdownHook(shutdown_Hook);
 		
+		duio = new DUio(this);
+		network_Thread = new Network_Thread(this);
 		
+		duio.setNetwork_Thread(network_Thread);
+		network_Thread.setDUio(duio);
 		
+		duio.start();
+		network_Thread.start();
 		
 	}
 	
