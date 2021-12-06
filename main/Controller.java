@@ -2,14 +2,13 @@ package main;
 
 public class Controller {
 
-<<<<<<< HEAD
+
 	final static boolean debugMode = true;
 	
 	
 	private DUio duio;
 	private Network_Thread network_Thread;
-=======
->>>>>>> parent of c1eb899 (Bootprocedure Added)
+
 	
 	private Shutdown_Hook shutdown_Hook = new Shutdown_Hook(this);
 	
